@@ -1,4 +1,6 @@
 #include <string>
+#include <iostream>
+#include <iomanip>
 
 class Contact
 {
@@ -11,8 +13,10 @@ class Contact
 
 	public:
 		Contact();
-		Contact(std::string first_name, std::string last_name, std::string nickname, std::string phone_number, std::string darkest_secret);
+		void set_infos(std::string first_name, std::string last_name, std::string nickname, std::string phone_number, std::string darkest_secret);
+		std::string get_infos();
 		~Contact();
+		void print_contact(int index);
 };
 
 // Contact::Contact(/* args */)
