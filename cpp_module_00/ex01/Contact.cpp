@@ -7,7 +7,11 @@ Contact::Contact() {
 Contact::~Contact() {}
 void Contact::print_contact(int index)
 {
-	std::cout << '|' << std::setw(10) << index << first_name << last_name << nickname << std::endl;
+	std::cout << "|" << std::setw(10)  <<  index;
+	std::cout << "|" << std::setw(10) << first_name;
+	std::cout << "|" << std::setw(10) << last_name ;
+	std::cout << "|" << std::setw(10) << nickname;
+	std::cout << "|" << std::endl;
 }
 void Contact::set_infos(std::string first_name, std::string last_name, std::string nickname, std::string phone_number, std::string darkest_secret)
 {
