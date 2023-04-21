@@ -9,11 +9,11 @@ class PhoneBook
 	public:
 		PhoneBook();
 		void add(std::string first_name, std::string last_name, std::string nickname, std::string phone_number, std::string darkest_secret);
-		void search();
-		void print_contact(int index);
+		void search(int index);
+		int print_contacts();
 		~PhoneBook();
 
-		std::string get_infos();
+		void get_infos(int index);
 	
 };
 

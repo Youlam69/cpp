@@ -8,36 +8,49 @@ PhoneBook::PhoneBook() {
 PhoneBook::~PhoneBook() {
 }
 
-
 void PhoneBook::add(std::string first_name, std::string last_name, std::string nickname, std::string phone_number, std::string darkest_secret)
 {
 	contacts[n_contacts % 8].set_infos(first_name, last_name, nickname, phone_number, darkest_secret);
 	n_contacts++;
 }
-void search()
+
+void PhoneBook::search(int index)
 {
-	std::cout << "|----------|----------|----------|----------|" << std::endl;
-	std::cout << "|     index|first name| last name|  nickname|" << std::endl;
-	std::cout << "|----------|----------|----------|----------|" << std::endl;
-	for (int i = 0; i < 8; i++)
-	{
-		std::cout << "|" << std::setw(10) << i << "|";
-		std::cout << std::setw(10) << Contacts[i].get_first_name() << "|";
-		std::cout << std::setw(10) << Contacts[i].get_last_name() << "|";
-		std::cout << std::setw(10) << Contacts[i].get_nickname() << "|" << std::endl;
-	}
-	std::cout << std::setw(10) << Contacts ;
-
-}
-std::string PhoneBook::get_infos() {
-	std::string infos;
-	for (int i = 0; i < 8; i++)
-	{
-		infos += contacts[i].get_infos();
-	}
-	return (infos);
+	if(index <= n_contacts && index <= 8 && index > 0)
+		std::cout << contacts[index - 1].get_info() << std::endl;
+	else
+		std::cout << "Contact not found" << std::endl;
 }
 
+int PhoneBook::print_contacts()
+{
+	int nc  = 8;
+	if(n_contacts < 8)
+		nc = n_contacts;
+	if(n_contacts == 0)
+	{
+		std::cout << "No contacts" << std::endl;
+		return 0;
+	}
+	else
+	{
+		std::cout << "|----------|----------|----------|----------|" << std::endl;
+		std::cout << "|     index|first name| last name|  nickname|" << std::endl;
+		std::cout << "|----------|----------|----------|----------|" << std::endl;
+		for (int i = 0; i < nc; i++)
+		{
+			contacts[i].print_contact(i + 1);
+			// std::cout << "|" << std::setw(10) << i << "|";
+			// std::cout << std::setw(10) << contacts[i].print_contact() << "|";
+		}
+	}
+	return 1;
+	// std::cout << std::setw(10) << Contacts ;
+}
+
+void PhoneBook::get_infos(int index) {
+	std::cout << contacts[index].get_info();
+}
 
 // ADD : enregistrer un nouveau contact
 // ◦ Si l’utilisateur entre cette commande, le programme lui demande de remplir
