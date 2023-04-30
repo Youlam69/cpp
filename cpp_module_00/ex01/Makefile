@@ -11,13 +11,13 @@ SRC =	PhoneBook.cpp \
 
 HEDEARS = PhoneBook.hpp Contact.hpp 
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRC:.cpp=.o)
 
 
 all: $(NAME)
 
 $(NAME): $(OBJ) $(HEDEARS)
-	$(CC) $(FLAGS) $(SRC) -o $(NAME)
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 clean:
 	rm -rf $(OBJ)
 fclean:

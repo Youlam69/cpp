@@ -40,12 +40,9 @@ int PhoneBook::print_contacts()
 		for (int i = 0; i < nc; i++)
 		{
 			contacts[i].print_contact(i + 1);
-			// std::cout << "|" << std::setw(10) << i << "|";
-			// std::cout << std::setw(10) << contacts[i].print_contact() << "|";
 		}
 	}
 	return 1;
-	// std::cout << std::setw(10) << Contacts ;
 }
 
 void PhoneBook::get_infos(int index) {

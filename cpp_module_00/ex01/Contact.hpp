@@ -19,10 +19,4 @@ class Contact
 		void print_contact(int index);
 };
 
-// Contact::Contact(/* args */)
-// {
-// }
 
-// Contact::~Contact()
-// {
-// }

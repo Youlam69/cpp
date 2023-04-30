@@ -36,26 +36,27 @@ int main() {
 			std::cin >> contact.last_name;
 			std::cout << "Enter Nickname" << std::endl;
 			std::cin >> contact.nickname;
-	
 			std::cout << "Enter Phone Number" << std::endl;
 			while(1)
 			{
 				std::cin >> contact.phone_number;
+				if(std::cin.eof())
+					return 1;
 				if(contact.phone_number.length() > 10 || !isNumber(contact.phone_number))
 				{
-					std::cout << "-1- Do not use anything but numbers;" << std::endl;
-					std::cout << "-2- Do not use more than 10 digits." << std::endl;
-					std::cout << "-3- remaber " -1- -2- " & try angain " << std::endl;
+					std::cout << "-1- Don't use anything but numbers;" << std::endl;
+					std::cout << "-2- Don't use more than 10 digits." << std::endl;
+					std::cout << "-3- Remember " "-1-  -2-" " & try again " << std::endl;
 				}
 				else
 					break;
 			}
-
 			std::cout << "Enter Darkest Secret" << std::endl;
 			std::cin >> contact.darkest_secret;
 			phonebook.add(contact.first_name, contact.last_name, contact.nickname, contact.phone_number, contact.darkest_secret);
 		}
-		else if (command == "SEARCH"){
+		else if (command == "SEARCH")
+		{
 			if (!phonebook.print_contacts())
 				continue;
 			std::cout << "Enter index: " << std::endl;
@@ -66,27 +67,5 @@ int main() {
 		else
 			std::cout << "Invalid command" << std::endl;
 	}
-
-	// phonebook.add("younees1525929", "elamra", "youkan", "0612645", "acascascsdf");
-	// phonebook.add("younees2", "elamra", "youkaijninijnijn", "0612645", "acascascsdf");
-	// phonebook.add("younees3", "elamra", "youkan", "0612645", "acascascsdf");
-	// phonebook.add("younees4", "elamra", "youkan", "0612645", "acascascsdf");
-	// // phonebook.add("younees5", "elamra", "youkan", "0612645", "acascascsdf");
-	// // phonebook.add("younees6", "elamra", "youkan", "0612645", "acascascsdf");
-	// // phonebook.add("younees7", "elamra", "youkan", "0612645", "acascascsdf");
-	// // phonebook.add("younees8", "elamra", "youkan", "0612645", "acascascsdf");
-	// // phonebook.add("obounri1", "elamra", "youkan", "0612645", "acascascsdf");
-	// // phonebook.add("obounri2", "elamra", "youkan", "0612645", "acascascsdf");
-
-	// phonebook.print_contacts();
-	// std::cout << "----------------" << std::endl;
-
-	// phonebook.search(4);
-	// std::cout << "----------------" << std::endl;
-
-	// std::cout << phonebook.get_infos() << std::endl;
-	// std::cout << std::setw(10) << "hello" << "|papa" << std::endl;
-	// std::cout << "hello" << std::endl;
-
 	return (0);
 }
