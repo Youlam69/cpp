@@ -9,6 +9,11 @@ struct Contact_add
 	int index;
 };
 
+bool isNumber(const std::string& str)
+{
+    return str.find_first_not_of("0123456789") == std::string::npos;
+}
+
 int main() {
 	
 	std::string command;
@@ -33,8 +38,19 @@ int main() {
 			std::cin >> contact.nickname;
 	
 			std::cout << "Enter Phone Number" << std::endl;
-			std::cin >> contact.phone_number;
-			if(contact.phone_number.length() <=0 || contact.phone_number. > 10
+			while(1)
+			{
+				std::cin >> contact.phone_number;
+				if(contact.phone_number.length() > 10 || !isNumber(contact.phone_number))
+				{
+					std::cout << "-1- Do not use anything but numbers;" << std::endl;
+					std::cout << "-2- Do not use more than 10 digits." << std::endl;
+					std::cout << "-3- remaber " -1- -2- " & try angain " << std::endl;
+				}
+				else
+					break;
+			}
+
 			std::cout << "Enter Darkest Secret" << std::endl;
 			std::cin >> contact.darkest_secret;
 			phonebook.add(contact.first_name, contact.last_name, contact.nickname, contact.phone_number, contact.darkest_secret);

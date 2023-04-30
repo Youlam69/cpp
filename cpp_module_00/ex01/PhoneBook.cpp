@@ -51,12 +51,3 @@ int PhoneBook::print_contacts()
 void PhoneBook::get_infos(int index) {
 	std::cout << contacts[index].get_info();
 }
-
-// ADD : enregistrer un nouveau contact
-// ◦ Si l’utilisateur entre cette commande, le programme lui demande de remplir
-// une par une les informations du nouveau contact. Une fois tous les champs
-// complétés, le nouveau contact est ajouté au répertoire.
-// ◦ Un contact possède les champs suivants : first name (prénom), last name
-// (nom de famille), nickname (surnom), phone number (numéro de téléphone),
-// et darkest secret (son plus lourd secret). Les champs d’un contact enregistré ne
-// peuvent être vides.
