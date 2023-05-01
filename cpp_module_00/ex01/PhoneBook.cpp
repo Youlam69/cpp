@@ -6,14 +6,13 @@
 /*   By: ylamraou <ylamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 00:08:05 by ylamraou          #+#    #+#             */
-/*   Updated: 2023/05/01 00:08:06 by ylamraou         ###   ########.fr       */
+/*   Updated: 2023/05/01 01:16:06 by ylamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook() {
-	std::cout << "PhoneBook created" << std::endl;
 	n_contacts = 0;
 }
 

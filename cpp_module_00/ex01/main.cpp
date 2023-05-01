@@ -6,7 +6,7 @@
 /*   By: ylamraou <ylamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 00:07:35 by ylamraou          #+#    #+#             */
-/*   Updated: 2023/05/01 00:07:36 by ylamraou         ###   ########.fr       */
+/*   Updated: 2023/05/01 01:29:01 by ylamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,19 @@ bool isNumber(const std::string& str)
 
 int main() {
 	
-	std::string command;
+	std::string test;
 	PhoneBook phonebook;
 
 	while (1)
 	{
 		if(std::cin.eof())
 			break;
+		std::string command;
 		std::cout << "Enter command: " << std::endl;
 		std::cin >> command;
+		// getline(std::cin, test);
+		// std::cout << test << std::endl;
+		// std::cout << command << std::endl;
 		if (command == "EXIT")
 			break;
 		else if (command == "ADD")
@@ -65,17 +69,31 @@ int main() {
 					break;
 			}
 			std::cout << "Enter Darkest Secret" << std::endl;
+			std::cin.clear();
 			std::cin >> contact.darkest_secret;
 			phonebook.add(contact.first_name, contact.last_name, contact.nickname, contact.phone_number, contact.darkest_secret);
 		}
 		else if (command == "SEARCH")
 		{
 			if (!phonebook.print_contacts())
-				continue;
+			{
+				std::cout << "JJJJJJJ" << std::endl;
+			}
+			else{
 			std::cout << "Enter index: " << std::endl;
-			int index;
+			std::string index;
+			// int index;
 			std::cin >> index;
-			phonebook.search(index);
+			// while (!isNumber(index)){
+			// 	if(std::cin.eof())
+			// 		break;
+			// 	std::cout << "Enter index: " << std::endl;
+			// 	std::cin >> index;
+			// }
+			phonebook.search(std::atoi(index.c_str()));
+			// phonebook.search(index);
+				
+			}
 		}
 		else
 			std::cout << "Invalid command" << std::endl;
