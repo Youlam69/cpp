@@ -3,7 +3,6 @@
 int main()
 {
 	Harl hi;
-	hi.complain( "WARNING");
-
+	hi.complain( "WARNNG");
 	return (0);
 }

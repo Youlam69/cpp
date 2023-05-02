@@ -28,16 +28,36 @@ void Harl::error( void )
 
 void Harl::complain( std::string level )
 {
-	typedef void (Harl::*harl)() ;
+	// typedef void (Harl::*harl)() ;
 
-	harl lista[4] = { &Harl::debug, &Harl::info , &Harl::warning, &Harl::error };
+	// harl lista[4] = { &Harl::debug, &Harl::info , &Harl::warning, &Harl::error };
 	
 	std::string str[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	
-	for(int i = 0; i < 4; i++ )
+
+	int i = 0;
+    while(i < 4)
 	{
 		if(str[i] == level)
-			(this->*lista[i])();
+            break;
+        i++;
 	}
+    switch (i)
+    {
+        case 0 :
+            debug();
+            break;
+        case 1 :
+            info();
+            break;
 
+        case 2 :
+            warning();
+            break;
+
+        case 3 :
+            error();
+            break ;
+        default :
+            std::cout << "[Probably complaining about insignificant problems] " << std::endl;
+    }
 }
