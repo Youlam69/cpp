@@ -1,10 +1,9 @@
+#pragma once
 #ifndef WEAPON_HPP
 #define WEAPON_HPP
 
 #include <iostream>
 #include <string>
-#include "HumanA.hpp"
-#include "HumanB.hpp"
 
 
 class Weapon {
@@ -17,7 +16,7 @@ class Weapon {
 		std::string getType();
 };
 
-int main(void);
+// int main(void);
 
 #endif
 

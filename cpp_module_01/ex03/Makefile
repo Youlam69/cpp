@@ -6,7 +6,7 @@
 #    By: ylamraou <ylamraou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/01 00:08:51 by ylamraou          #+#    #+#              #
-#    Updated: 2023/05/02 06:21:08 by ylamraou         ###   ########.fr        #
+#    Updated: 2023/05/02 06:28:25 by ylamraou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,8 @@ CC = c++
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC =	HumanA.cpp \
-		Weapon.cpp \
+SRC =	Weapon.cpp \
+		HumanA.cpp \
 		HumanB.cpp \
 		main.cpp
 

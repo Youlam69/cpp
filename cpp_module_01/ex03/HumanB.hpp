@@ -1,3 +1,4 @@
+#pragma once
 #ifndef HUMANB_HPP
 #define HUMANB_HPP
 
@@ -10,7 +11,7 @@ class HumanB
 		std::string name;
 
 	public:
-		HumanB(std::string _name) { name = _name; }
+		HumanB(std::string _name);
 		void attack();
 		void setWeapon(Weapon &z);
 };
