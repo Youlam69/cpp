@@ -52,60 +52,60 @@
 
 // 	}
 
-// 	// zombieHorde()
-// 	Zombie *z;
-// 	z = new Zombie[N];
-// 	for (int c = 0; c < N; c++)
-// 		z[c].set_name(name)
-// 	return z;	
+	zombieHorde()
+	Zombie *z;
+	z = new Zombie[N];
+	for (int c = 0; c < N; c++)
+		z[c].set_name(name)
+	return z;	
 
-// 	// to call from main
-// 	Zombie* e = zombieHorde(N, "mok");
+	// to call from main
+	Zombie* e = zombieHorde(N, "mok");
 
-// 	// alloc exemple
-// 	class Zombie {
-// 		char *vdsv = new char[3];
+	// alloc exemple
+	class Zombie {
+		char *vdsv = new char[3];
 
-// 		~Zombie() { delete vdsv[] }
-// 	}
-// 	Zombie myZ;
+		~Zombie() { delete vdsv[] }
+	}
+	Zombie myZ;
 
 
-// }
+}
 
-// 	}
+	}
 
-// 	Zombie *z;
-// 	z = new Zombie[N];
-// 	for (int c = 0; c < N; c++)
-// 		z[c].set_name(name)
-// 	return z;	
+	Zombie *z;
+	z = new Zombie[N];
+	for (int c = 0; c < N; c++)
+		z[c].set_name(name)
+	return z;	
 
-// 	Zombie* e = zombieHorde(N, "mok");
+	Zombie* e = zombieHorde(N, "mok");
 
-// 	class Zombie {
-// 		char *vdsv = new char[3];
+	class Zombie {
+		char *vdsv = new char[3];
 
-// 		~Zombie() { delete vdsv[] }
-// 	}
+		~Zombie() { delete vdsv[] }
+	}
 
-// 	Zombie myZ;
+	Zombie myZ;
 
-	//ex02
-	// std::string stringA = "Hi";
-	// std::string *stringPTR = &stringA;
-	// std::string &stringREF = stringA;
+// 	ex02
+// 	std::string stringA = "Hi";
+// 	std::string *stringPTR = &stringA;
+// 	std::string &stringREF = stringA;
 
-	// std::cout << &stringA << std::endl;
-	// std::cout << stringPTR << std::endl;
-	// std::cout << &stringREF << std::endl;
+// 	std::cout << &stringA << std::endl;
+// 	std::cout << stringPTR << std::endl;
+// 	std::cout << &stringREF << std::endl;
 
-	// std::cout << stringA << std::endl;
-	// std::cout << *stringPTR << std::endl;
-	// std::cout << stringREF << std::endl;
+// 	std::cout << stringA << std::endl;
+// 	std::cout << *stringPTR << std::endl;
+// 	std::cout << stringREF << std::endl;
 
-	// stringREF.append("opp");
-	// std::cout << stringA << std::endl;
+// 	stringREF.append("opp");
+// 	std::cout << stringA << std::endl;
 
 
 // }
