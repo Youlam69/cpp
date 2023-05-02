@@ -12,9 +12,8 @@
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string _name, Weapon &_w): w(_w)
+HumanA::HumanA(std::string _name, Weapon &_w): w(_w), name(_name)
 {
-	name = _name;
 }
 void HumanA::attack()
 {

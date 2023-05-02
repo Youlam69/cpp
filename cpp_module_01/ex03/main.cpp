@@ -12,7 +12,7 @@
 
 #include "HumanA.hpp"
 #include "HumanB.hpp"
-#include "weapon.hpp"
+#include "Weapon.hpp"
 
 int main()
 {

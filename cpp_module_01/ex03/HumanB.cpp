@@ -13,12 +13,16 @@
 #include "HumanB.hpp"
 HumanB::HumanB(std::string _name)
 {
+	this->w = NULL;
 	name = _name;
 }
 
 void HumanB::attack()
 {
-	std::cout << name << " atatcks with thueir " << w->getType() << std::endl;
+	if(!w)
+		std::cout << name << " can't atack with no wopen" << std::endl;
+	else
+		std::cout << name << " atatcks with thueir " << w->getType() << std::endl;
 }
 
 void HumanB::setWeapon(Weapon &z)

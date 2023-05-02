@@ -28,8 +28,12 @@ HEDEARS =	Weapon.hpp \
 
 OBJ = $(SRC:.cpp=.o)
 
+
 all: $(NAME)
 
+%.o:%.cpp
+	$(CC) $(FLAGS) -o $@ -c $<
+	
 $(NAME): $(OBJ) $(HEDEARS)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 clean:
