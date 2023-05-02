@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylamraou <ylamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 04:51:42 by ylamraou          #+#    #+#             */
-/*   Updated: 2023/05/02 04:51:43 by ylamraou         ###   ########.fr       */
+/*   Created: 2023/05/02 04:51:23 by ylamraou          #+#    #+#             */
+/*   Updated: 2023/05/02 04:51:24 by ylamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-void randomChump(std::string name)
+
+std::string Zombie::get_name()
 {
-    Zombie z;
-    z.set_name(name);
-    z.announce();
+    return (name);
 }
+void Zombie::set_name(std::string nom)
+{
+    name = nom;
+}
+
+void Zombie::announce(void)
+{
+    std::cout << get_name() <<": BraiiiiiiinnnzzzZ..."<< std::endl;
+}
+
