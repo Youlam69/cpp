@@ -2,28 +2,34 @@
 
 Fixed::Fixed()
 {
-	std::cout << "Fixed : Default Constructor Called" << std::endl;
+	this->value = 0;
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "Fixed : Destructor Called" << std::endl;
 }
 
 Fixed::Fixed(Fixed const &obj)
 {
-	std::cout << "Copy Constructor Called" << std::endl;
 	if (this != &obj)
 		*this = obj;
 }
 
 Fixed	&Fixed::operator= (const Fixed &obj)
 {
-	std::cout << "Copy Assignment Operator Called" << std::endl;
 	if (this != &obj)
 	{
-		//	this->attributes = obj.attributes;
-		//	...
+		this->value = obj.value;
 	}
 	return (*this);
+}
+
+int Fixed::getRawBits() const
+{
+        return (this->value);
+}
+
+void Fixed::setRawBits(int const raw)
+{
+		this->value = raw;
 }
