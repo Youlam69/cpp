@@ -6,7 +6,7 @@
 /*   By: ylamraou <ylamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 04:51:39 by ylamraou          #+#    #+#             */
-/*   Updated: 2023/05/02 04:51:40 by ylamraou         ###   ########.fr       */
+/*   Updated: 2023/05/13 22:32:33 by ylamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Zombie* newZombie(std::string name)
 {
     Zombie *z = new Zombie;
-    z->set_name(name);
+    *z= Zombie(name);
     return(z);
 }
 

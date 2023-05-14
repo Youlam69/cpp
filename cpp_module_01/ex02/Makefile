@@ -6,7 +6,7 @@
 #    By: ylamraou <ylamraou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/01 00:08:51 by ylamraou          #+#    #+#              #
-#    Updated: 2023/05/02 05:11:02 by ylamraou         ###   ########.fr        #
+#    Updated: 2023/05/14 01:45:18 by ylamraou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,12 @@ FLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRC =	main.cpp
 
-
 OBJ = $(SRC:.cpp=.o)
 
-
 all: $(NAME)
+
+%.o:%.cpp
+	$(CC) $(FLAGS) -o $@ -c $<
 
 $(NAME): $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)

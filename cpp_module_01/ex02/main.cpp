@@ -6,7 +6,7 @@
 /*   By: ylamraou <ylamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 04:56:35 by ylamraou          #+#    #+#             */
-/*   Updated: 2023/05/02 05:11:56 by ylamraou         ###   ########.fr       */
+/*   Updated: 2023/05/14 01:49:43 by ylamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ int main(void)
 	std::cout << *stringPTR << std::endl;
 	std::cout << stringREF << std::endl;
 
-	stringREF.append("opp");
+	stringREF.append(" oppla");
 	std::cout << stringA << std::endl;
 }

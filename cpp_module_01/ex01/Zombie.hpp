@@ -6,7 +6,7 @@
 /*   By: ylamraou <ylamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 04:51:20 by ylamraou          #+#    #+#             */
-/*   Updated: 2023/05/02 04:51:21 by ylamraou         ###   ########.fr       */
+/*   Updated: 2023/05/14 01:36:18 by ylamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ class Zombie
     private:
         std::string name;
     public:
-        // Zombie();
-        // ~Zombie();
+        Zombie();
+        Zombie(std::string nom);
+        ~Zombie();
 
         std::string get_name();
         void set_name(std::string nom);
