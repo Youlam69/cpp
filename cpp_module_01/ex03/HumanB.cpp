@@ -11,6 +11,12 @@
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
+
+HumanB::HumanB()
+{
+	this->w = NULL;
+}
+
 HumanB::HumanB(std::string _name)
 {
 	this->w = NULL;

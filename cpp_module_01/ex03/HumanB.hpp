@@ -23,6 +23,7 @@ class HumanB
 		std::string name;
 
 	public:
+		HumanB();
 		HumanB(std::string _name);
 		void attack();
 		void setWeapon(Weapon &z);
