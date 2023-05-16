@@ -6,7 +6,7 @@
 /*   By: ylamraou <ylamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 23:41:54 by ylamraou          #+#    #+#             */
-/*   Updated: 2023/05/02 23:41:56 by ylamraou         ###   ########.fr       */
+/*   Updated: 2023/05/16 01:19:42 by ylamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main(int ac, char **av)
 	Harl hi;
 	if (ac != 2)
 	{
-		std::cout << "Error\n";
+		std::cout << "Error nbrs of prms\n";
 		return 0;
 	}
 

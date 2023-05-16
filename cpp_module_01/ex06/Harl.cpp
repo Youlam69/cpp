@@ -6,7 +6,7 @@
 /*   By: ylamraou <ylamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 23:42:01 by ylamraou          #+#    #+#             */
-/*   Updated: 2023/05/02 23:42:02 by ylamraou         ###   ########.fr       */
+/*   Updated: 2023/05/16 01:20:41 by ylamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,12 @@ void Harl::complain( std::string level )
     {
         case 0 :
             debug();
-            break;
+
         case 1 :
             info();
-            break;
 
         case 2 :
             warning();
-            break;
 
         case 3 :
             error();
