@@ -6,7 +6,7 @@
 /*   By: ylamraou <ylamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 05:57:54 by ylamraou          #+#    #+#             */
-/*   Updated: 2023/05/02 06:16:11 by ylamraou         ###   ########.fr       */
+/*   Updated: 2023/05/16 07:32:21 by ylamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 HumanA::HumanA(std::string _name, Weapon &_w): w(_w), name(_name)
 {
+    std::cout << "HumanA paramitrized constructor called" << std::endl;
 }
 void HumanA::attack()
 {
-	std::cout << name << " atatcks with thueir " << w.getType() << std::endl;
+	std::cout << name << " attacks with their " << w.getType() << std::endl;
 }

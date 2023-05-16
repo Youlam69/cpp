@@ -6,7 +6,7 @@
 /*   By: ylamraou <ylamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 05:35:21 by ylamraou          #+#    #+#             */
-/*   Updated: 2023/05/16 03:15:00 by ylamraou         ###   ########.fr       */
+/*   Updated: 2023/05/16 07:20:46 by ylamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,19 @@ Weapon::Weapon(){
 	std::cout << "Weapon constructor called" << std::endl;
 }
 
-Weapon::Weapon(std::string _type){
-	type = _type;
+
+
+
+Weapon::Weapon(Weapon const &_w){
+	*this = _w;
 	std::cout << "Weapon copy constructor called" << std::endl;
+}
+
+
+Weapon::Weapon(std::string _type){
+	// *this = _w;
+	type = _type;
+	std::cout << "Weapon paramitrized constructor called" << std::endl;
 }
 
 void  Weapon::setType(std::string _type){
