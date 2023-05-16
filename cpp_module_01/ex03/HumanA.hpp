@@ -6,7 +6,7 @@
 /*   By: ylamraou <ylamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 23:44:45 by ylamraou          #+#    #+#             */
-/*   Updated: 2023/05/02 23:44:46 by ylamraou         ###   ########.fr       */
+/*   Updated: 2023/05/16 04:04:52 by ylamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ class HumanA
 		HumanA(std::string _name, Weapon &_w);
 		void attack();
 };
-
 
 #endif

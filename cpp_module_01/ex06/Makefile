@@ -6,12 +6,11 @@
 #    By: ylamraou <ylamraou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 23:41:52 by ylamraou          #+#    #+#              #
-#    Updated: 2023/05/16 01:20:05 by ylamraou         ###   ########.fr        #
+#    Updated: 2023/05/16 05:05:37 by ylamraou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = harlFilter
-
 
 CXXFLAGS = -Wall -Wextra -Werror 
 
@@ -32,6 +31,8 @@ $(NAME) : $(OBJ)
 
 %.o : %.cpp $(INC)
 	$(CC) $(CXXFLAGS) -c $< -o $@ 
+
+fresh: re clean
 
 clean :
 	rm -rf $(OBJ) 

@@ -6,7 +6,7 @@
 #    By: ylamraou <ylamraou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/01 00:08:51 by ylamraou          #+#    #+#              #
-#    Updated: 2023/05/14 00:54:57 by ylamraou         ###   ########.fr        #
+#    Updated: 2023/05/16 05:06:45 by ylamraou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,16 +26,19 @@ HEDEARS = Zombie.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
-
 all: $(NAME)
 
 %.o:%.cpp
 	$(CC) $(FLAGS) -o $@ -c $<
 
+fresh: re clean
+
 $(NAME): $(OBJ) $(HEDEARS)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+
 clean:
 	rm -rf $(OBJ)
+
 fclean:
 	rm -rf $(NAME) $(OBJ)
 

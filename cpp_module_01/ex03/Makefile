@@ -6,7 +6,7 @@
 #    By: ylamraou <ylamraou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/01 00:08:51 by ylamraou          #+#    #+#              #
-#    Updated: 2023/05/02 06:28:25 by ylamraou         ###   ########.fr        #
+#    Updated: 2023/05/16 03:09:16 by ylamraou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,8 @@ all: $(NAME)
 
 %.o:%.cpp
 	$(CC) $(FLAGS) -o $@ -c $<
+
+fresh: re clean
 	
 $(NAME): $(OBJ) $(HEDEARS)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)

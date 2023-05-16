@@ -6,7 +6,7 @@
 #    By: ylamraou <ylamraou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 23:44:00 by ylamraou          #+#    #+#              #
-#    Updated: 2023/05/02 23:44:01 by ylamraou         ###   ########.fr        #
+#    Updated: 2023/05/16 05:04:54 by ylamraou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,8 @@ $(NAME) : $(OBJ)
 
 %.o : %.cpp $(INC)
 	$(CC) $(CXXFLAGS) -c $< -o $@ 
+
+fresh: re clean
 
 clean :
 	rm -rf $(OBJ) 

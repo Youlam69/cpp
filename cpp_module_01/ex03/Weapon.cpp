@@ -6,22 +6,29 @@
 /*   By: ylamraou <ylamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 05:35:21 by ylamraou          #+#    #+#             */
-/*   Updated: 2023/05/02 06:31:16 by ylamraou         ###   ########.fr       */
+/*   Updated: 2023/05/16 03:15:00 by ylamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-Weapon::Weapon() {}
-Weapon::Weapon(std::string _type)
-{
+Weapon::Weapon(){
+	std::cout << "Weapon constructor called" << std::endl;
+}
+
+Weapon::Weapon(std::string _type){
+	type = _type;
+	std::cout << "Weapon copy constructor called" << std::endl;
+}
+
+void  Weapon::setType(std::string _type){
 	type = _type;
 }
-void  Weapon::setType(std::string _type)
-{
-	type = _type;
-}
-const std::string& Weapon::getType()
-{
+
+const std::string& Weapon::getType(){
 	return type;
+}
+
+Weapon::Weapon::~Weapon() {
+	std::cout << "Weapon destructor called" << std::endl;
 }
