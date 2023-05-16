@@ -6,7 +6,7 @@
 /*   By: ylamraou <ylamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 04:51:45 by ylamraou          #+#    #+#             */
-/*   Updated: 2023/05/14 01:05:44 by ylamraou         ###   ########.fr       */
+/*   Updated: 2023/05/16 10:49:53 by ylamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Zombie::Zombie()
 Zombie::Zombie(std::string nom)
 {
     name = nom;
-    std::cout << "copy constructor called" << std::endl;
+    std::cout << "Zombie parametrized constructor called" << std::endl;
 }
 
 Zombie::~Zombie()

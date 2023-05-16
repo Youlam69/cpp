@@ -6,7 +6,7 @@
 /*   By: ylamraou <ylamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 23:42:01 by ylamraou          #+#    #+#             */
-/*   Updated: 2023/05/16 02:59:54 by ylamraou         ###   ########.fr       */
+/*   Updated: 2023/05/16 10:12:31 by ylamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void Harl::debug( void )
 {
     std::cout << "[DEBUG]" << std::endl;
-    std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!" << std::endl ;
+    std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!" << std::endl;
 }
 
 void Harl::info( void )
@@ -40,30 +40,23 @@ void Harl::error( void )
 
 void Harl::complain( std::string level )
 {
-	// typedef void (Harl::*harl)() ;
-
-	// harl lista[4] = { &Harl::debug, &Harl::info , &Harl::warning, &Harl::error };
-	
-	std::string str[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-
 	int i = 0;
+	std::string str[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
     while(i < 4)
 	{
 		if(str[i] == level)
             break;
         i++;
 	}
+
     switch (i)
     {
         case 0 :
             debug();
-
         case 1 :
             info();
-
         case 2 :
             warning();
-
         case 3 :
             error();
             break ;

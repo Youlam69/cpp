@@ -6,7 +6,7 @@
 /*   By: ylamraou <ylamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 23:44:03 by ylamraou          #+#    #+#             */
-/*   Updated: 2023/05/02 23:44:04 by ylamraou         ###   ########.fr       */
+/*   Updated: 2023/05/16 09:58:24 by ylamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,5 @@ int main()
 	hi.complain( "INFO");
 	hi.complain( "WARNING");
 	hi.complain( "ERROR");
-
 	return (0);
 }
