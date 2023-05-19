@@ -1,24 +1,33 @@
-NAME = fixed
+NAME = Fixed 
 
-CC = c++
+CXXFLAGS = -Wall -Wextra -Werror 
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CC = c++ 
 
-INC = Fixed.hpp
+STD = -std=c++98 
 
-SRC =	main.cpp \
-		Fixed.cpp \
+SRC = Fixed.cpp main.cpp 
 
-SFILES = $(SRC:.cpp=.o)
+INC = Fixed.hpp 
 
-all : $(NAME)
+OBJ = $(SRC:.cpp=.o) 
 
-$(NAME) : $(SFILES) $(INC)
-	$(CC)  $(CXXFLAGS) $(SFILES) -o $(NAME)
+all : $(NAME) 
+
+$(NAME) : $(OBJ)
+	$(CC) $(CXXFLAGS) $(STD) $(OBJ) -o $(NAME) 
+
+%.o : %.cpp $(INC)
+	$(CC) $(CXXFLAGS) -c $< -o $@ 
 
 clean :
-	@-rm -rf *.o
+	rm -rf $(OBJ) 
 
 fclean : clean
-	@-rm -rf fixed
-re : fclean all
+	rm -rf $(NAME) 
+
+re : fclean all 
+
+fresh : all clean
+
+.PHONY : all clean fclean re
