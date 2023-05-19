@@ -28,4 +28,6 @@ fclean : clean
 
 re : fclean all 
 
+fresh : all clean
+
 .PHONY : all clean fclean re
