@@ -6,12 +6,11 @@
 /*   By: ylamraou <ylamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 23:32:35 by ylamraou          #+#    #+#             */
-/*   Updated: 2023/05/12 02:08:24 by ylamraou         ###   ########.fr       */
+/*   Updated: 2023/05/23 12:40:53 by ylamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
 
 int main( void ) {
 Fixed a;

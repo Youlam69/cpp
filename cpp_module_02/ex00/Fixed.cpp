@@ -1,22 +1,17 @@
 #include "Fixed.hpp"
 
-Fixed::Fixed()
-{
+Fixed::Fixed(){
 	this->value = 0;
 }
 
-Fixed::~Fixed()
-{
-}
+Fixed::~Fixed(){}
 
-Fixed::Fixed(Fixed const &obj)
-{
+Fixed::Fixed(Fixed const &obj){
 	if (this != &obj)
 		*this = obj;
 }
 
-Fixed	&Fixed::operator= (const Fixed &obj)
-{
+Fixed	&Fixed::operator= (const Fixed &obj){
 	if (this != &obj)
 	{
 		this->value = obj.value;
@@ -24,12 +19,10 @@ Fixed	&Fixed::operator= (const Fixed &obj)
 	return (*this);
 }
 
-int Fixed::getRawBits() const
-{
+int Fixed::getRawBits() const{
         return (this->value);
 }
 
-void Fixed::setRawBits(int const raw)
-{
+void Fixed::setRawBits(int const raw){
 		this->value = raw;
 }

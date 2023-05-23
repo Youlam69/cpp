@@ -2,7 +2,7 @@
 #define _Fixed_HPP_
 
 #include <iostream>
-#include <cmath>
+
 
 
 // ******************************************************** //

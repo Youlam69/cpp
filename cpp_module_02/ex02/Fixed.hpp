@@ -2,62 +2,69 @@
 # define FIXED_HPP
 
 # include <iostream>
-# include <cmath>
-#include <stdbool.h>
+// # include <cmath>
+# include <stdbool.h>
+
+// ******************************************************** //
+//                         CLASSES                         //
+// ****************************************************** //
 
 class Fixed 
 {
-private:
-    int value_;
-    static const int fractionalBits_ = 8;
-public:
+    public:
 
-    Fixed();
-    Fixed(const Fixed& other);
-    Fixed(const int _value);
-    Fixed(const float _value);
-    ~Fixed();
-	int		getRawBits(void) const;
-    void	setRawBits(int const raw);
-    float	toFloat(void) const;
-    int		toInt(void) const;
+        Fixed();
+        Fixed(const Fixed& obj);
+        Fixed(const int _value);
+        Fixed(const float _value);
+        ~Fixed();
 
-    // assgin op overload
-    Fixed&	operator=(const Fixed& other);
-    // 6 comparison operators: >, <, >=, <=, == and !=
-    bool	operator>(const Fixed& other)  const;
-    bool	operator<(const Fixed& other)  const;
-    bool	operator>=(const Fixed& other) const;
-    bool	operator<=(const Fixed& other) const;
-    bool	operator==(const Fixed& other) const;
-    bool	operator!=(const Fixed& other) const;
-    // 6 comparison operators: >, <, >=, <=, == and !=
+        int     getvalue(void) const;
+        int		getRawBits(void) const;
+        void	setRawBits(int const raw);
+        float	toFloat(void) const;
+        int		toInt(void) const;
+
+        // assgin op overload: =
+        Fixed&	operator=(const Fixed& other);
     
-    
-    // The 4 arithmetic operators: +, -, *, and /
-    Fixed   operator+(const Fixed& obj2);
-    Fixed   operator-(const Fixed& obj2);
-    Fixed   operator*(const Fixed& obj2);
-    Fixed   operator/(const Fixed& obj2);
-    // The 4 arithmetic operators: +, -, *, and /
+        // comparison operators: >, <, >=, <=, ==, !=
+        bool	operator>(const Fixed& other)  const;
+        bool	operator<(const Fixed& other)  const;
+        bool	operator>=(const Fixed& other) const;
+        bool	operator<=(const Fixed& other) const;
+        bool	operator==(const Fixed& other) const;
+        bool	operator!=(const Fixed& other) const;
+        
+        
+        // arithmetic operators: +, -, *, /
+        Fixed   operator+(const Fixed& obj2);
+        Fixed   operator-(const Fixed& obj2);
+        Fixed   operator*(const Fixed& obj2);
+        Fixed   operator/(const Fixed& obj2);
 
 
-    // The 4 increment/decrement operators
-    Fixed   operator++(int);
-    Fixed   operator++();
-    Fixed   operator--(int);
-    Fixed   operator--();
-    // The 4 increment/decrement operators
+        // increment/decrement operators
+        Fixed   operator++(int);
+        Fixed   operator++();
+        Fixed   operator--(int);
+        Fixed   operator--(); 
 
+        // (min/max) operators
+        static Fixed& min(Fixed& obj1, Fixed& obj2);
+        static const Fixed& min(const Fixed& obj1, const Fixed& obj2);
+        static Fixed& max(Fixed& obj1, Fixed& obj2);
+        static const Fixed& max(const Fixed& obj1, const Fixed& obj2);
 
-    // The 4 const(min/max), non-const(min/max) operators
-    static Fixed& min(Fixed& obj1, Fixed& obj2);
-    static const Fixed& min(const Fixed& obj1, const Fixed& obj2);
-    static Fixed& max(Fixed& obj1, Fixed& obj2);
-    static const Fixed& max(const Fixed& obj1, const Fixed& obj2);
-    // The 4 const(min/max), non-const(min/max) operators
+    private:
+        int value;
+        static const int fractionalBits = 8;
 
 };
+
+// ******************************************************** //
+//                        FUNCTIONS                        //
+// ****************************************************** //
 
 std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 

@@ -20,6 +20,8 @@ $(NAME) : $(OBJ)
 %.o : %.cpp $(INC)
 	$(CC) $(CXXFLAGS) -c $< -o $@ 
 
+fresh : all clean
+
 clean :
 	rm -rf $(OBJ) 
 

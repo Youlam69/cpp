@@ -20,7 +20,6 @@ class	Fixed
 		int value;
 		static const int fractional_bits = 8;
 
-		//	DataType	attributes.
 };
 
 // ******************************************************** //
