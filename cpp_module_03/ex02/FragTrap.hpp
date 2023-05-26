@@ -1,7 +1,6 @@
 #ifndef FragTrap_HPP
 #define FragTrap_HPP
 
-#include <iostream>
 #include "ClapTrap.hpp"
 // ******************************************************** //
 //                         CLASSES                         //

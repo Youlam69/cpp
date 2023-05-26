@@ -9,16 +9,14 @@ int main()
 
 	FragTrap a("BOB");
 
-	ScavTrap b("JIM");
-	ScavTrap o;
+	// ScavTrap b("JIM");
+	// ScavTrap o;
 
-	
-	
-	o = b;
+
 	a.attack("lol");
-	o.guardGate();
-
-	// a.attack("JIM");
+	// b.guardGate();
+	// b.attack("BOB");
+	a.highFivesGuys();
 
 	return (0);
 }
