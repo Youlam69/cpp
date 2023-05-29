@@ -12,18 +12,13 @@ AMateria::~AMateria()
 
 AMateria::AMateria(AMateria const &obj)
 {
-	std::cout << "Copy Constructor Called" << std::endl;
+	std::cout << "AMateria : Copy Constructor Called" << std::endl;
 	if (this != &obj)
 		*this = obj;
 }
 
 AMateria	&AMateria::operator= (const AMateria &obj)
 {
-	std::cout << "Copy Assignment Operator Called" << std::endl;
-	if (this != &obj)
-	{
-		//	this->attributes = obj.attributes;
-		//	...
-	}
+	std::cout << "AMateria : Copy Assignment Operator Called" << std::endl;
 	return (*this);
 }

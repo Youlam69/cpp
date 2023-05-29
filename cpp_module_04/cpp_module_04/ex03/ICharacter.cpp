@@ -22,8 +22,7 @@ ICharacter	&ICharacter::operator= (const ICharacter &obj)
 	std::cout << "Copy Assignment Operator Called" << std::endl;
 	if (this != &obj)
 	{
-		// this->_name = obj._name;
-		// this->_inventory = obj._inventory;
+		
 	}
 	return (*this);
 }

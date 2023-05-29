@@ -23,8 +23,8 @@ Cure	&Cure::operator= (const Cure &obj)
 	std::cout << "Copy Assignment Operator Called" << std::endl;
 	if (this != &obj)
 	{
-		//	this->attributes = obj.attributes;
-		//	...
+		this->type = obj.type;
+		
 	}
 	return (*this);
 }
