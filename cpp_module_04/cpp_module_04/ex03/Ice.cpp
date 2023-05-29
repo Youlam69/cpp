@@ -22,8 +22,17 @@ Ice	&Ice::operator= (const Ice &obj)
 	std::cout << "Copy Assignment Operator Called" << std::endl;
 	if (this != &obj)
 	{
-		//	this->attributes = obj.attributes;
-		//	...
+		this->type = obj.type;
 	}
 	return (*this);
+}
+
+AMateria* Ice::clone() const
+{
+    return new Ice(*this);
+}
+
+void Ice::use(ICharacter& target)
+{
+    std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

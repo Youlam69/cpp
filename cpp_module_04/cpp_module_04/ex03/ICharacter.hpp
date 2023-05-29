@@ -3,12 +3,14 @@
 
 #include <iostream>
 
-#include "AMateria.hpp"
+#include "AMateria.hpp" 
+
+class AMateria;
 // ******************************************************** //
 //                         CLASSES                         //
 // ****************************************************** //
 
-class ICharacter
+class ICharacter 
 {
 	public:
 	virtual ~ICharacter() {}

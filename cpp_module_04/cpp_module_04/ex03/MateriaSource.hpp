@@ -1,31 +1,24 @@
-#ifndef _Character_HPP_
-#define _Character_HPP_
+#ifndef _MateriaSource_HPP_
+#define _MateriaSource_HPP_
 
 #include <iostream>
-#include "ICharacter.hpp"
+#include "IMateriaSource.hpp"
 // ******************************************************** //
 //                         CLASSES                         //
 // ****************************************************** //
 
-class	Character : public ICharacter
+class	MateriaSource : public IMateriaSource
 {
-	public	:
-		Character ();
-		Character (Character const &obj);
-		Character (std::string const & name);
-		~Character ();
-		Character &operator= (const Character &obj);
-		std::string const & getName() const;
-
-		
-		void equip(AMateria* m);
-		void unequip(int idx);
-		void use(int idx, ICharacter& target);
-		
-
-	private	:
-        std::string name;
+ 	private:
         AMateria* inventory[4];
+    public:
+        MateriaSource();
+        ~MateriaSource();
+        MateriaSource(const MateriaSource& obj);
+        MateriaSource& operator= (const MateriaSource& obj);
+
+    	void learnMateria(AMateria*);
+        AMateria* createMateria(std::string const & type);
 		//	DataType	attributes.
 };
 

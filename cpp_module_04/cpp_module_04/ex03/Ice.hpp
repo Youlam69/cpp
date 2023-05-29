@@ -15,9 +15,9 @@ class	Ice : public AMateria
 		Ice (Ice const &obj);
 		~Ice ();
 		Ice &operator= (const Ice &obj);
-
+		AMateria* clone() const;
+		void use(ICharacter& target);
 	private	:
-		std::string	type;
 		//	DataType	attributes.
 };
 

@@ -19,6 +19,17 @@ AMateria::AMateria(AMateria const &obj)
 
 AMateria	&AMateria::operator= (const AMateria &obj)
 {
+	(void)obj;
 	std::cout << "AMateria : Copy Assignment Operator Called" << std::endl;
 	return (*this);
+}
+
+std::string const & AMateria::getType() const
+{
+	return (type);
+}
+
+void AMateria::use(ICharacter& target)
+{
+	(void)target;
 }

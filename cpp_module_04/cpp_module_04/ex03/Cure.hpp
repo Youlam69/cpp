@@ -14,9 +14,12 @@ class	Cure : public AMateria
 		Cure (Cure const &obj);
 		~Cure ();
 		Cure &operator= (const Cure &obj);
+	
+		AMateria* clone() const;
+		void	use(ICharacter&);
 
 	private	:
-		std::string	type;
+		
 		//	DataType	attributes.
 };
 
