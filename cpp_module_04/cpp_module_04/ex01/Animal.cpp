@@ -13,14 +13,14 @@ Animal::~Animal()
 
 Animal::Animal(Animal const &obj)
 {
-	std::cout << "Copy Constructor Called" << std::endl;
+	std::cout << "Animal : Copy Constructor Called" << std::endl;
 	if (this != &obj)
 		*this = obj;
 }
 
 Animal	&Animal::operator= (const Animal &obj)
 {
-	std::cout << "Copy Assignment Operator Called" << std::endl;
+	std::cout << "Animal : Assignation Operator Called" << std::endl;
 	if (this != &obj)
 	{
 		type = obj.type;
@@ -33,7 +33,3 @@ void	Animal::makeSound() const
 	std::cout << "Animal : Default sound" << std::endl;
 }
 
-std::string	Animal::getType() const
-{
-	return (type);
-}
