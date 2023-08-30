@@ -1,6 +1,6 @@
 FLAGS	:= -Wall -Werror -Wextra -std=c++98
-HEADERS := Bureaucrat.hpp Form.hpp
-SRC 	:= Bureaucrat.cpp main.cpp Form.cpp
+HEADERS := Bureaucrat.hpp AForm.hpp
+SRC 	:= Bureaucrat.cpp main.cpp AForm.cpp
 NAME	:= bureaucrat
 OBJ		:= $(SRC:%.cpp=%.o)
 

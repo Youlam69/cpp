@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat() : _name("default"), _grade(150) {}
 
@@ -48,7 +48,7 @@ void Bureaucrat::incrementGrade() {
 }
 
 
-void Bureaucrat::signForm(Form & f) {
+void Bureaucrat::signAForm(AForm & f) {
     try {
         f.beSigned(*this);
         std::cout << _name << " signs " << f.getName() << std::endl;
@@ -58,7 +58,7 @@ void Bureaucrat::signForm(Form & f) {
     }
 }
 
-Bureaucrat::GradeTooHighException::GradeTooHighException() : std::runtime_error("Grade too high") {}
+Bureaucrat::GradeTooHighException::GradeTooHighException() : std::runtime_error("Grade too high")  {}
 Bureaucrat::GradeTooLowException::GradeTooLowException() : std::runtime_error("Grade too low") {}
 
 std::ostream & operator<<(std::ostream & o, Bureaucrat const & src) {

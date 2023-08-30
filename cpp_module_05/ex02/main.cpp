@@ -1,19 +1,19 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 int main()
 {
 
     try
     {
-        Form form("shahadat lwafat", 1, 150);
+        AForm AForm("shahadat lwafat", 1, 150);
         Bureaucrat obama("obama", 2);
-        obama.signForm(form);
+        obama.signAForm(AForm);
         obama.incrementGrade();
-        obama.signForm(form);
+        obama.signAForm(AForm);
         obama.decrementGrade();
-        obama.signForm(form);
-        std::cout << form << std::endl;
+        obama.signAForm(AForm);
+        std::cout << AForm << std::endl;
     }
     catch(const std::exception& e)
     {

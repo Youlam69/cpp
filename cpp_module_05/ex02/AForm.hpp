@@ -4,7 +4,7 @@
 #include <iostream>
 
 class Bureaucrat;
-class Form
+class AForm
 {
 
     private:
@@ -13,11 +13,11 @@ class Form
         int const _gradeSign;
         int const _gradeExec;
     public:
-        Form();
-        ~Form();
-        Form(std::string name, int gradeSign, int gradeExec);
-        Form(Form const & src);
-        Form & operator=(Form const & rhs);
+        AForm();
+        ~AForm();
+        AForm(std::string name, int gradeSign, int gradeExec);
+        AForm(AForm const & src);
+        AForm & operator=(AForm const & rhs);
         std::string getName() const;
         bool getSigned() const;
         int getGradeSign() const;
@@ -25,6 +25,9 @@ class Form
 
         void beSigned(Bureaucrat & b);
         void setSigned(bool b);
+
+		virtual void execute(Bureaucrat const & executor) const = 0;	
+/
 
         class GradeTooHighException : public std::runtime_error
         {
@@ -38,4 +41,4 @@ class Form
         };
 };
 
-std::ostream & operator<<(std::ostream & o, Form const & src);
+std::ostream & operator<<(std::ostream & o, AForm const & src);
