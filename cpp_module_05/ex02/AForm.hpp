@@ -27,7 +27,6 @@ class AForm
         void setSigned(bool b);
 
 		virtual void execute(Bureaucrat const & executor) const = 0;	
-/
 
         class GradeTooHighException : public std::runtime_error
         {
