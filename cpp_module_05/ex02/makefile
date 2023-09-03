@@ -1,7 +1,7 @@
 FLAGS	:= -Wall -Werror -Wextra -std=c++98
 HEADERS := Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
 SRC 	:= Bureaucrat.cpp main.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
-NAME	:= bureaucrat
+NAME	:= AForm
 OBJ		:= $(SRC:%.cpp=%.o)
 
 all: $(NAME)

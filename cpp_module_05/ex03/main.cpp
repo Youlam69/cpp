@@ -13,14 +13,14 @@ int main()
 
     b.signForm(*form);
     b.executeForm(*form);
-    // delete form;
+    delete form;
     form = stagir.makeForm("presidential pardon", "Bender");
     b.signForm(*form);
     b.executeForm(*form);
-    // delete form;
+    delete form;
     form = stagir.makeForm("shrubbery creation", "Bender");
     b.signForm(*form);
     b.executeForm(*form);
-    // delete form;
+    delete form;
     form = stagir.makeForm("shrubbery", "Bender");
 }
