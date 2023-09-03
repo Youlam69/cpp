@@ -1,5 +1,6 @@
-#ifndef _ShrubberyCreationForm_HPP_
-#define _ShrubberyCreationForm_HPP_
+
+#ifndef _PresidentialPardonForm_HPP_
+#define _PresidentialPardonForm_HPP_
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 
@@ -12,21 +13,18 @@ class AForm;
 //                         CLASSES                         //
 // ****************************************************** //
 
-class	ShrubberyCreationForm : public AForm
+class	PresidentialPardonForm : public AForm
 {
 	public	:
-		ShrubberyCreationForm ();
-		ShrubberyCreationForm(std::string target);
-		ShrubberyCreationForm (ShrubberyCreationForm const &obj);
-		~ShrubberyCreationForm ();
-		ShrubberyCreationForm &operator= (const ShrubberyCreationForm &obj);
-		
-		void	execute(Bureaucrat const & executor) const;	
+		PresidentialPardonForm ();
+		PresidentialPardonForm(std::string target);
+		PresidentialPardonForm (PresidentialPardonForm const &obj);
+		~PresidentialPardonForm ();
+		PresidentialPardonForm &operator= (const PresidentialPardonForm &obj);
 
+		void	execute(Bureaucrat const & executor) const;	
 	private	:
 		std::string _target;
-		
-		
 };
 
 // ******************************************************** //

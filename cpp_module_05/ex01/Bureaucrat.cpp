@@ -13,7 +13,6 @@ Bureaucrat::Bureaucrat(Bureaucrat const & src) : _name(src._name) {
 }
 
 void Bureaucrat::setGrade(int grade) {
-    _grade = grade;
     if( grade < 1 )
         throw GradeTooHighException();
     else if( grade > 150 )
@@ -24,8 +23,10 @@ void Bureaucrat::setGrade(int grade) {
 
 Bureaucrat& Bureaucrat::operator=(Bureaucrat const & src) {
     
-    Bureaucrat *newBureaucrat = new Bureaucrat(src);
-    return *newBureaucrat;
+    if (this != &src) {
+        _grade = src._grade;
+    }
+    return *this;
 }
 
 Bureaucrat::~Bureaucrat(){ std::cout << "Bureaucrat destructor called" << std::endl;}

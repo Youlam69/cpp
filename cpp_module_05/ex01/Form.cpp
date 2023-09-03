@@ -9,6 +9,13 @@ Form::Form(std::string name, int gradeSign, int gradeExec) : _name(name), _signe
 		throw Form::GradeTooLowException();
 }
 
+Form::Form(Form const & src) : _name(src._name), _signed(src._signed), _gradeSign(src._gradeSign), _gradeExec(src._gradeExec){
+	if (src._gradeSign < 1)
+		throw Form::GradeTooHighException();
+	else if (src._gradeSign > 150)
+		throw Form::GradeTooLowException();
+}
+
 Form::~Form(){}
 
 Form & Form::operator=( Form const & rhs ){
@@ -19,7 +26,7 @@ Form & Form::operator=( Form const & rhs ){
 	return *this;
 }
 
-Form::GradeTooHighException::GradeTooHighException() : std::runtime_error("Grade too hi") {}
+Form::GradeTooHighException::GradeTooHighException() : std::runtime_error("Grade too high") {}
 Form::GradeTooLowException::GradeTooLowException() : std::runtime_error("Grade too low") {}
 std::string Form::getName() const {return (this->_name);}
 
