@@ -9,8 +9,9 @@ Intern::~Intern(){}
 
 Intern &Intern::operator= (const Intern &obj)
 {
-    (void)obj;
-        return (*this);
+    if (this != &obj)
+        *this = obj;
+    return (*this);   
 }
 
 AForm *Intern::makeForm(std::string formName, std::string target)
