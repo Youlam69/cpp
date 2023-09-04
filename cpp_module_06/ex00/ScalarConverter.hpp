@@ -9,33 +9,33 @@
 
 class  ScalarConverter
 {
-private:
-    std::string _str;
-    char _char;
-    int _int;
-    float _float;
-    double _double;
-    bool _isChar;
-    bool _isInt;
-    bool _isFloat;
-    bool _isDouble;
-
     private:
+        // std::string _str;
+        // static char _char;
+        // static int _int;
+        // static float _float;
+        // static double _double;
+        // static bool _isChar;
+        // static bool _isInt;
+        // static bool _isFloat;
+        // static bool _isDouble;
         ScalarConverter();
         ~ScalarConverter();
         ScalarConverter(const ScalarConverter &copy);
         ScalarConverter& operator=(const ScalarConverter &copy);
     public:
+        static bool _checkInt(std::string _str, int &x);
+        static bool _checkChar(std::string _str, char &c);
+        static bool _checkFloat(std::string _str, float &f);
+        static bool _checkDouble(std::string _str , double &d);
 
-        void _checkChar(std::string _str);
-        void _checkInt(std::string _str);
-        void _checkFloat(std::string _str);
-        void _checkDouble(std::string _str);
-        void _printChar();
-        void _printInt();
-        void _printFloat();
-        void _printDouble();
-        void _printAll();
+        static void _printChar(std::string _str);
+        static void _printInt(std::string _str);
+        static void _printFloat(std::string _str);
+        static void _printDouble(std::string _str);
+
+
+        // void _printAll();
        static void convert(std::string str);
 };
 
