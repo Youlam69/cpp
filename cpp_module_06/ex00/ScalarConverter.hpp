@@ -29,6 +29,8 @@ class  ScalarConverter
         static bool _checkFloat(std::string _str, float &f);
         static bool _checkDouble(std::string _str , double &d);
 
+        static void prntf(float _float);
+
         static void _printChar(std::string _str);
         static void _printInt(std::string _str);
         static void _printFloat(std::string _str);
