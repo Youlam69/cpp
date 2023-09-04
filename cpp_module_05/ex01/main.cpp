@@ -3,16 +3,15 @@
 
 int main()
 {
-
     try
     {
-        Form form("shahadat lwafat", 1, 150);
-        Bureaucrat obama("obama", 2);
-        obama.signForm(form);
-        obama.incrementGrade();
-        obama.signForm(form);
-        obama.decrementGrade();
-        obama.signForm(form);
+        Form form("chahadat lmou3a9", 1, 150);
+        Bureaucrat hamid("hamid", 2);
+        hamid.signForm(form);
+        hamid.incrementGrade();
+        hamid.signForm(form);
+        hamid.decrementGrade();
+        hamid.signForm(form);
         std::cout << form << std::endl;
     }
     catch(const std::exception& e)
