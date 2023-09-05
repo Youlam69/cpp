@@ -70,7 +70,7 @@ void ScalarConverter::_printChar(std::string _str)
     }
     else if(_checkFloat(_str, _float ))
     {
-        if(_float < 0 || _float > 127)
+        if(_float < 0 || _float > 127 || _float != static_cast<int>(_float))
             std::cout << "impossible" << std::endl;
         else if (isprint(_float))
             std::cout << "'" << static_cast<char>(_float) << "'" << std::endl;
@@ -79,7 +79,7 @@ void ScalarConverter::_printChar(std::string _str)
     }
     else if(_checkDouble(_str, _double ))
     {
-        if(_double < 0 || _double > 127)
+        if(_double < 0 || _double > 127 || _double != static_cast<int>(_double))
             std::cout << "impossible" << std::endl;
         else if (isprint(_double))
             std::cout << "'" << static_cast<char>(_double) << "'" << std::endl;

@@ -28,31 +28,30 @@ void identify(Base *p)
         std::cout << "Unknown" << std::endl;
 }
 
-void indentify(Base &p)
+void identify(Base &p)
 {
     try
     {
         A &a = dynamic_cast<A &>(p);
         std::cout << "A" << std::endl;
         (void)a;
+        return ;
     }
-    catch (std::exception &e)
-    {
-    }
+    catch (std::exception &e){}
     try
     {
         B &b = dynamic_cast<B &>(p);
         std::cout << "B" << std::endl;
         (void)b;
+        return ;
     }
-    catch (std::exception &e)
-    {
-    }
+    catch (std::exception &e){}
     try
     {
         C &c = dynamic_cast<C &>(p);
         std::cout << "C" << std::endl;
         (void)c;
+        return ;
     }
     catch (std::exception &e)
     {
@@ -61,29 +60,13 @@ void indentify(Base &p)
 }
 
 
-// class f{
-//     public:
-//     virtual ~f(){}
-// };
-
-// class h : public f{};
-
 int main(void)
 {
-    Base *base = generate();
-
+    Base *base = generate();;
+    std::cout << "Pointer: ";
     identify(base);
-    identify(base);
+    std::cout << "Reference: ";
+    identify(*base);
+    delete base;
 
-    // h b;
-    // Base V;
-    // try
-    // {
-    //     V = dynamic_cast<Base &>(b);
-    // }
-    // catch(const std::exception& e)
-    // {
-    //     std::cerr << "Error: " << e.what() << '\n';
-    // }
-    
 }
