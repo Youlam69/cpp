@@ -25,7 +25,7 @@ template <typename T>
 Array<T>::Array(unsigned int n) : _array(new T[n]), _size(n) {}
 
 template <typename T>
-Array<T>::Array(Array const &copy) : _array(NULL) _size(0)
+Array<T>::Array(Array const &copy) : _array(NULL), _size(0)
 {
     *this = copy;
 }
@@ -57,13 +57,11 @@ T &Array<T>::operator[](unsigned int i)
     return this->_array[i];
 }
 
-
 template <typename T>
 unsigned int Array<T>::size() const
 {
     return this->_size;
 }
-
 
 template <typename T>
 Array<T>::~Array()
