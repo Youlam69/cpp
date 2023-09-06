@@ -3,63 +3,63 @@
 #include "iter.hpp"
 
 template<typename T>
-void    print_array(T & x)
-{
-    std::cout << x << " ";
-}
 
-void    add_one(int& x)
+void    decrement_(int& x)
 {
-    x++;
+    x--;
 }
 
 void    subtract_one(float& x)
 {
-    x -= 1.1f;
+    x += 0.55f;
 }
 
-void    append(std::string& x)
+void    switch_case(char& x)
 {
-    x += "!";
+    if(x >= 'a' && x <= 'z')
+        x -= 32;
+    else if (x >= 'A' && x <= 'Z')
+        x += 32;
 }
 
-void    rotate(char& x)
+void    add_(std::string& x)
 {
-    if (x == 'z')
-        x = 'a';
-    else if (x == 'Z')
-        x = 'A';
-    else
-        x++;
+    x += "_is_added";
 }
+
+void    called_to_write(T & t)
+{
+    std::cout << t << " ";
+}
+
 
 int main()
 {
     int array[] = { 0, 1, 2, 3, 4 };
-    iter(array, 5, print_array);
-    iter(array, 5, add_one);
+    iter(array, 5, called_to_write);
+    iter(array, 5, decrement_);
     std::cout << std::endl;
-    iter(array, 5, print_array);
+    iter(array, 5, called_to_write);
     std::cout << std::endl;
 
     std::string array2[] = { "zero", "one", "two", "three", "four" };
-    iter(array2, 5, print_array);
-    iter(array2, 5, append);
+    iter(array2, 5, called_to_write);
+    iter(array2, 5, add_);
     std::cout << std::endl;
-    iter(array2, 5, print_array);
+    iter(array2, 5, called_to_write);
     std::cout << std::endl;
 
     float array3[] = { 0.0f, 1.1f, 2.2f, 3.3f, 4.4f };
-    iter(array3, 5, print_array);
+    iter(array3, 5, called_to_write);
     iter(array3, 5, subtract_one);
     std::cout << std::endl;
-    iter(array3, 5, print_array);
+    iter(array3, 5, called_to_write);
     std::cout << std::endl;
 
     char array4[] = { 'a', 'b', 'c', 'd', 'z' };
-    iter(array4, 5, print_array);
-    iter(array4, 5, rotate);
+    iter(array4, 5, called_to_write);
+    iter(array4, 5, switch_case);
     std::cout << std::endl;
-    iter(array4, 5, print_array);
+    iter(array4, 5, called_to_write);
     std::cout << std::endl;
 }
