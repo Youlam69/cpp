@@ -1,8 +1,9 @@
 #pragma once
 template <typename T>
-void iter(T *array, int length, void (*func)(T &))
+void iter(T *array, int len, void (*func)(T &))
 {
-    for (int i = 0; i < length; i++)
-        func(array[i]);
+    int i = 0;
+    while(i < len)
+        func(array[i++]);
 }
 

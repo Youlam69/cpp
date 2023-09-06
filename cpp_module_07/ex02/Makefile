@@ -1,7 +1,7 @@
 FLAGS	:= -Wall -Werror -Wextra -std=c++98
-HEADERS := iter.hpp
+HEADERS := Array.hpp
 SRC 	:= main.cpp
-NAME	:= iter
+NAME	:= Array
 OBJ		:= $(SRC:%.cpp=%.o)
 
 all: $(NAME)
