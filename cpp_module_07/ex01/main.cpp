@@ -32,25 +32,8 @@ void    called_to_write(T & t)
     std::cout << t << " ";
 }
 
-
 int main()
 {
-    {
-        int array[] = { 0, 1, 2, 3, 4 };
-        iter(array, 5, called_to_write);
-        iter(array, 5, decrement_);
-        std::cout << std::endl;
-        iter(array, 5, called_to_write);
-        std::cout << std::endl;
-    }
-    {
-        std::string array[] = { "zero", "one", "two", "three", "four" };
-        iter(array, 5, called_to_write);
-        iter(array, 5, add_);
-        std::cout << std::endl;
-        iter(array, 5, called_to_write);
-        std::cout << std::endl;
-    }
 
     {
         float array[] = { 0.f, 0.45f, 2.2f, 3.14f, 4.4f };
@@ -60,6 +43,23 @@ int main()
         iter(array, 5, called_to_write);
         std::cout << std::endl;
     }
+    {
+        int array[] = { 0, 1, 2, 3, 4 };
+        iter(array, 5 , called_to_write);
+        iter(array, 5, decrement_);
+        std::cout << std::endl;
+        iter(array, 5, called_to_write);
+        std::cout << std::endl;
+    }
+    {
+        std::string array[] = { "a1", "a2", "a3", "a4", "a5" };
+        iter(array, 5, called_to_write);
+        iter(array, 5, add_);
+        std::cout << std::endl;
+        iter(array, 5, called_to_write);
+        std::cout << std::endl;
+    }
+
     {
         char array[] = { 'L', 'O', 'W', 'u', 'p' };
         iter(array, 5, called_to_write);
