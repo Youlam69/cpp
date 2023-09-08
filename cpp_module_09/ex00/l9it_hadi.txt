@@ -1,0 +1,41 @@
+
+void BitcoinExchange::algo(int ac, char *av[], std::vector<std::pair<unsigned int, unsigned int> > vec, std::vector<unsigned int> vec_a, std::vector<unsigned int> vec_b, char c)
+{
+    //              Time
+    struct timeval start, end;
+    long sec, micro;
+
+    gettimeofday(&start, NULL);
+    for (size_t i = 0; i < vec.size(); i++)
+    {
+        if (vec[i].first > vec[i].second)
+            std::swap(vec[i].first, vec[i].second);
+    }
+
+    for (size_t i = 0; i < vec.size(); i++)
+        vec_a.push_back(vec[i].first);
+
+    for (size_t i = 0; i < vec.size(); i++)
+        vec_b.push_back(vec[i].second);
+
+    std::sort(vec_a.begin(), vec_a.end());
+
+    for (size_t i = 0; i < vec_b.size(); i++)
+        vec_a.insert(std::lower_bound(begin(vec_a), vec_a.end(), vec_b[i]), vec_b[i]);
+    if (flag)
+        vec_a.insert(std::lower_bound(vec_a.begin(), vec_a.end(), tmp), tmp);
+
+    std::cout << "\nAfter  : "; 
+
+    for (size_t i = 0; i < vec_a.size(); i++)
+        std::cout << vec_a[i] << " ";
+
+    gettimeofday(&end, NULL);
+    sec = end.tv_sec - start.tv_sec;
+    micro = end.tv_usec - start.tv_usec;
+    long diff = (sec / 1000000) + (micro);
+    if (c == 'v')
+        std::cout << "\nTime to process a range of " << ac << " elements with std::vector : " << diff  << " us" << "\n";
+    if (c == 'd')
+        std::cout << "\nTime to process a range of " << ac << " elements with std::deque : " << diff  << " us" << "\n";
+}

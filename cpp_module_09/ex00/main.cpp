@@ -1,172 +1,183 @@
+
 #include "BitcoinExchange.hpp"
 
-void    BitcoinExchange::ReadBase()
+// void valid_value(std::string value)
+// {
+//     if(value.length() < 2)
+//         throw std::runtime_error("Wrong data format1");
+//     if(value[0] != ',')
+//         throw std::runtime_error("Wrong data format2");
+    
+//     std::string ref_value = value.substr(1, value.length() - 1);
+//     int ref = 0;
+//     for(size_t i = 0; i < ref_value.length()  ;i++)
+//     {
+//         if(ref_value[i] == '.')
+//             ref++;
+//         if(ref > 1)
+//             throw std::runtime_error("Wrong data format3");
+//         if((ref_value[i] < '0' || ref_value[i] > '9') && ref_value[i] != '.')
+//             throw std::runtime_error("Wrong data format4");
+//     }
+// }
+
+// void valid_date(std::string date)
+// {
+//     if(date.length() < 10)
+//         throw std::runtime_error("Wrong data format");
+//     std::string year = date.substr(0, 4);
+//     std::string month = date.substr(5, 2);
+//     std::string day = date.substr(8, 2);
+//     if(year > "2023" || year < "2009")
+//         throw std::runtime_error("Wrong date format");
+//     if(month > "12" || month < "01")
+//         throw std::runtime_error("Wrong date format");
+//     if(day > "31" || day < "01")
+//         throw std::runtime_error("Wrong date format");
+//     if (month == "02" && day > "29")
+//         throw std::runtime_error("Wrong date format");
+//     if (month == "04" || month == "06" || month == "09" || month == "11")
+//     {
+//         if(day > "30")
+//             throw std::runtime_error("Wrong date format");
+//     }
+//     if(date[4] != '-' || date[7] != '-')
+//         throw std::runtime_error("Wrong date format");
+//     for(int i = 0; i < 10; i++)
+//     {
+//         if(i == 4 || i == 7)
+//             continue;
+//         if(date[i] < '0' || date[i] > '9')
+//             throw std::runtime_error("Wrong data format");
+//     }
+//     int y = std::atoi(year.c_str());
+//     if(y % 4 == 0)
+//     {
+//         if(month == "02" && day > "29")
+//             throw std::runtime_error("Wrong date format");
+//     }
+// }
+
+
+
+// void valid_data(std::string data)
+// {
+//     if(data.length() <= 10)
+//         throw std::runtime_error("Wrong data format");
+//     valid_date(data.substr(0, 10));
+//     // std::cout << data + " yolam " << data.size() << std::endl;
+//     // std::cout << data.substr(10, data.length() - 10)  << std::endl;
+//     valid_value(data.substr(10, data.length() - 10));
+// }
+
+// void check_data_file(std::string &data_content)
+// {
+
+//     std::ifstream file("data.csv");
+//     if(!file|| !file.is_open())
+//         throw std::runtime_error("Can't open Data_file");
+//     if(file.peek() == std::ifstream::traits_type::eof())
+//         throw std::runtime_error("Data_file is empty");
+//     else
+//     {
+//         std::string line;
+//         while(std::getline(file, line).good())
+//         {
+//             valid_data(line);
+//             data_content = data_content + line + '\n';
+//             // std::cout << "|" << line << "|";
+//         }
+//     }
+//     // exit(0);
+// }
+
+
+// void check_input( std::string input ,std::string &input_content)
+// {
+
+//     std::ifstream file(input);
+//     if(!file|| !file.is_open())
+//         throw std::runtime_error("Can't open Input_file");
+//     if(file.peek() == std::ifstream::traits_type::eof())
+//         throw std::runtime_error("Input_file is empty");
+//     std::getline(file, input_content, '\0');
+//     // std::cout << input_content << std::endl;
+// }
+
+int main(int ac, char **av)
 {
-    std::ifstream   input;
-    std::string     database;
-
-    input.open("./data.csv");
-    while (!input.eof())
+    
+    try
     {
-        input >> database;
-        std::string fulldate = database.substr(0,10).erase(4,1).erase(6,1);
-        float      rate = 0.0;
-        std::stringstream convert;
-        convert << database.substr(11);
-        convert >> rate;
-        _database.insert(std::make_pair(fulldate,rate));
-    }
-    input.close();    
-}
-
-int BitcoinExchange::Parsing(int year, int month, int day, std::string raate ,float rate, std::string line)
-{
-    size_t idx = line.find("|");
-    if (line[idx + 1] != ' ' || line[idx - 1] != ' ')
-    {
-        std::cerr << "Invalid Pipe\n";
-        return (-1);
-    }
-
-    if (line.substr(4,1) != "-" && line.substr(7,1) != "-")
-    {
-        std::cerr << "Invalid Date Format\n";
-        return (-1);
-    }
-
-    int count = 0;
-    for (size_t i = 0; i < raate.length(); i++)
-    {
-        if (raate[0] == '.')
-        {
-            std::cerr << "Invalid Rate Format\n";
-            return (-1);
-        }
-        if (raate[i] == '.')
-            count++;
-        if (!(isdigit(raate[i])) && raate[i] != '.' && (count == 1 || count == 0))
-        {
-            std::cerr << "Invalid Rate Format\n";
-            return (-1);
-        }
-    }
-
-    int month_limits[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    if (year < 2009 || month < 1 || month > 12)
-    {
-        std::cerr << "Invalid Date Format\n";
-        return (-1);
-    }
-    if (day > month_limits[month - 1] || day < 1)
-    {
-        std::cerr << "Out of month range\n";
-        return (-1);
-    }
-    if (rate < 0.00 || rate > 1000.00 )
-    {
-        std::cerr << "Rate out of range\n";
-        return (-1);
-    }
-    return (0);
-}
-
-void    BitcoinExchange::PrintOuput(std::string inputdate, float bitcoins)
-{
-    std::map<std::string, float>::iterator itb = this->_database.begin();
-    std::map<std::string, float>::iterator ite = this->_database.end();
-    bool    flag = false;
-
-    for (; itb != ite; itb++)
-    {
-        if (itb->first == inputdate)
-        {
-            flag = true;
-            break;
-        }
-    }
-    if (flag == true)
-    {
-        std::cout << inputdate.insert(4,"-").insert(7,"-") << " => " << bitcoins << " = " <<  std::fixed << std::setprecision(2) << bitcoins * itb->second << "\n";
-        flag = false;
-    }
-    else
-    {
-        ite = this->_database.lower_bound(inputdate);
-        std::cout << inputdate.insert(4,"-").insert(7,"-") << " => " << bitcoins << " = " << std::fixed << std::setprecision(2) << bitcoins * ite->second << "\n";
-    }
-}
-
-void    BitcoinExchange::ReadInput(std::string file)
-{
-    std::ifstream   input;
-    std::string     line;
-
-    input.open(file);
-
-    if (input.fail())
-    {
-        std::cerr << "Cannot Open File\n";
-        input.close();    
-        exit(0);
-    }
-
-    while (!input.eof())
-    {
-        std::string fulldate;
-        std::getline(input, line);
-
-        int year, month, day = 0;
-        std::stringstream y, m, d;
-        y << line.substr(0,4);
-        m << line.substr(5,2);
-        d << line.substr(8,2);
-        y >> year;
-        m >> month;
-        d >> day;
-
-        if (line.length() < 14)
-        {
-            std::cerr << "Invalid Format\n";
-            continue ;
-        }
-        
-        std::string raate = line.substr(13, line.find('\0'));
-
-        float   bitcoins = 0.00;
-        std::stringstream bit;
-        bit << raate;
-        bit >> bitcoins;
-
-        if (month < 10 && day < 10)
-            fulldate = std::to_string(year * 10) + std::to_string(month * 10) + std::to_string(day);
-        else if (day < 10)
-            fulldate = std::to_string(year) + std::to_string(month * 10) + std::to_string(day);
-        else if (month < 10)
-            fulldate = std::to_string(year * 10) + std::to_string(month) + std::to_string(day);
+        if(ac != 2)
+            throw std::runtime_error("Wrong number of arguments");
         else
-            fulldate = std::to_string(year) + std::to_string(month) + std::to_string(day);
+        {
+            std::string data_content;
+            std::string input_content;
+            check_data_file(data_content);
+            check_input(av[1], input_content);
 
-        if (Parsing(year, month, day, raate, bitcoins, line) == 0)
-            PrintOuput(fulldate, bitcoins);
+            BitcoinExchange bitcoin(data_content, input_content);
+
+        }
     }
-}
-
-int main(int ac, char *av[])
-{
-    BitcoinExchange A;
-    if (ac == 2)
+    catch(const std::exception& e)
     {
-        try
-        {
-            A.ReadBase();
-            A.ReadInput(av[1]);
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << e.what() << '\n';
-        }
+        std::cerr << e.what() << '\n';
     }
-    else
-        std::cerr << "Error: could not open file";
+    
 }
+    
+    
+    
+    // if(ac != 4)
+	// {
+	// 	std::cerr << "ERROR: check number of parameters, must be three" << std::endl;
+	// 	return 0;
+	// }
+	// const std::string &file = av[1];
+	// std::string s1 = av[2];
+	// std::string s2 = av[3];
 
+	// std::ifstream infile(file.c_str());
+	// if(!infile || !infile.is_open())
+	// {
+	// 	std::cerr << "ERROR FILE Can NOT Open" << std::endl;
+	// 	return 1;
+	// }
+
+	// if(infile.peek() == std::ifstream::traits_type::eof() )
+	// {
+	// 	std::cerr << "ERROR EMPTY FILE" << std::endl;
+	// 	infile.close();
+	// 	return 1;
+	// }
+
+	// std::ofstream outfile((file + ".replace").c_str());
+	// if(!outfile || !outfile.is_open())
+	// {
+	// 	std::cerr << "CAN'T OPEN OUTPUTFILE" << std::endl;
+	// 	infile.close();
+	// 	return 1;
+	// }
+
+	// std::string line;
+
+	// while(std::getline(infile, line))
+	// {
+	// 	if (s1 == ""){}
+	// 	else if(line != "" ||  s2 != "")
+	// 	{
+	// 		size_t f = 0;
+	// 		while((f = line.find(s1, f)) != std::string::npos)
+	// 		{
+	// 			line.erase(f, s1.length() );
+	// 			line.insert(f, s2);
+	// 			f += s2.length();
+	// 		}
+	// 	}
+	// 	std::cout << "f = "  << "len = "<<  s1.length() << std::endl;
+		
+	// 	outfile << line << std::endl;
+	// }
