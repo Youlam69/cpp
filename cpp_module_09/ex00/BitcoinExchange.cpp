@@ -150,9 +150,9 @@ void valid_date(std::string date)
             throw std::runtime_error("Wrong data format");
     }
     int y = std::atoi(year.c_str());
-    if(y % 4 == 0)
+    if(y % 4 != 0)
     {
-        if(month == "02" && day > "29")
+        if(month == "02" && day >= "29")
             throw std::runtime_error("Error: bad input => " + date.substr(0, 10));
     }
 }
